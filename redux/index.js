@@ -2,7 +2,7 @@ import { createStore, compose, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import logger from "redux-logger";
 
-import { checkToken, setRoute } from "./actions";
+import { checkToken } from "./actions";
 
 import rootReducer from "./reducers";
 

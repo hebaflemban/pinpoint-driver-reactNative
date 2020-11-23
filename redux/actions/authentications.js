@@ -4,7 +4,7 @@ import decode from "jwt-decode";
 import { SET_CURRENT_USER } from "./types";
 import { instance } from "./instance";
 import { PROFILE } from "../../navigation/screens";
-import { setRoute } from "./route";
+import { setPackages } from "./packages";
 
 export const login = (userData, navigation) => async (dispatch) => {
   try {
@@ -24,7 +24,7 @@ const setCurrentUser = (token) => async (dispatch) => {
     type: SET_CURRENT_USER,
     payload: token ? decode(token) : null,
   });
-  token ? dispatch(setRoute()) : null;
+  token ? dispatch(setPackages()) : null;
 };
 
 const setToken = async (token) => {

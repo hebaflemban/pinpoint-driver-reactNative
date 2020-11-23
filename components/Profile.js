@@ -8,8 +8,10 @@ import {
 } from "@ui-kitten/components";
 import { default as theme } from "../theme.json";
 import { PACKAGEINFO, ROUTE } from "../navigation/screens";
+import { logout } from "../redux/actions";
+import { connect } from "react-redux";
 
-const Profile = ({ navigation }) => {
+const Profile = ({ navigation, logout }) => {
   return (
     <ApplicationProvider {...eva} theme={{ ...eva.light, ...theme }}>
       <Layout
@@ -22,8 +24,13 @@ const Profile = ({ navigation }) => {
           {" "}
           Start Delivering{" "}
         </Button>
+        <Button onPress={() => logout()}> Logout </Button>
       </Layout>
     </ApplicationProvider>
   );
 };
-export default Profile;
+const mapDispatchToProps = {
+  logout,
+};
+
+export default connect(null, mapDispatchToProps)(Profile);

@@ -9,3 +9,4 @@ export const PACKAGEINFO = "PackageInfo";
 export const DELIVERED = "Delivered";
 export const FAILD = "Failed";
 export const OTPVERIFICATION = "OTPVerification";
+export const GEOLOCATION = "GEOLOCATION";

@@ -1,28 +1,36 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet } from "react-native";
 import { Container } from "native-base";
 import { NavigationContainer } from "@react-navigation/native";
 import * as eva from "@eva-design/eva";
-import { ApplicationProvider, IconRegistry } from "@ui-kitten/components";
 import { EvaIconsPack } from "@ui-kitten/eva-icons";
+import { ApplicationProvider, IconRegistry } from "@ui-kitten/components";
 import { default as theme } from "./theme.json";
-
-import RootNavigator from "./navigation";
 import { Provider } from "react-redux";
+import { StyleSheet } from "react-native";
+import PubNub from "pubnub";
+import { PubNubProvider } from "pubnub-react";
+import RootNavigator from "./navigation";
 import store from "./redux";
+
+const pubnub = new PubNub({
+  publishKey: "pub-c-bc6df04b-ff73-421b-959b-99d804b1acf0",
+  subscribeKey: "sub-c-23d7f202-2de6-11eb-9713-12bae088af96",
+});
+
 export default function App() {
   return (
-    <Provider store={store}>
-      <NavigationContainer initialRouteName="USER">
-        <Container>
-          <IconRegistry icons={EvaIconsPack} />
-          <ApplicationProvider {...eva} theme={{ ...eva.light, ...theme }}>
-            <RootNavigator />
-          </ApplicationProvider>
-        </Container>
-      </NavigationContainer>
-    </Provider>
+    <PubNubProvider client={pubnub}>
+      <Provider store={store}>
+        <NavigationContainer initialRouteName="USER">
+          <Container>
+            <IconRegistry icons={EvaIconsPack} />
+            <ApplicationProvider {...eva} theme={{ ...eva.light, ...theme }}>
+              <RootNavigator />
+            </ApplicationProvider>
+          </Container>
+        </NavigationContainer>
+      </Provider>
+    </PubNubProvider>
   );
 }
 

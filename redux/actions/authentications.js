@@ -3,7 +3,7 @@ import decode from "jwt-decode";
 
 import { SET_CURRENT_USER } from "./types";
 import { instance } from "./instance";
-import { BOTTOMTAB, PROFILE } from "../../navigation/screens";
+import { PROFILE } from "../../navigation/screens";
 import { setPackages } from "./packages";
 
 export const login = (userData, navigation) => async (dispatch) => {
@@ -13,7 +13,7 @@ export const login = (userData, navigation) => async (dispatch) => {
 
     const { access } = res.data;
     dispatch(setCurrentUser(access));
-    navigation.navigate(BOTTOMTAB, { screen: PROFILE });
+    navigation.navigate(PROFILE);
   } catch (error) {
     console.error("Error while logging in", error.responce);
   }

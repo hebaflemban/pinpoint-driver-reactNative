@@ -3,10 +3,19 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 
 // Screens
-import { HOME, BOTTOMTAB, LOGIN } from "./screens";
+import {
+  HOME,
+  BOTTOMTAB,
+  LOGIN,
+  PACKAGEINFO,
+  OTPVERIFICATION,
+  PROFILE,
+} from "./screens";
 import Home from "../components/Home";
-import PinpointStack from "./PinpointStack";
 import Login from "../components/Login";
+import PackageInfo from "../components/PackageInfo";
+import OTPVerification from "../components/OTPVerification";
+import Profile from "../components/Profile";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -17,8 +26,18 @@ export default function RootTabNavigator() {
       <Screen options={{ headerShown: false }} name={LOGIN} component={Login} />
       <Screen
         options={{ headerShown: false }}
-        name={BOTTOMTAB}
-        component={PinpointStack}
+        name={PROFILE}
+        component={Profile}
+      />
+      <Screen
+        options={{ headerShown: false }}
+        name={PACKAGEINFO}
+        component={PackageInfo}
+      />
+      <Screen
+        options={{ headerShown: false }}
+        name={OTPVERIFICATION}
+        component={OTPVerification}
       />
     </Navigator>
   );

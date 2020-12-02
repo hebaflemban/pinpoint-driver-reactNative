@@ -19,13 +19,7 @@ export default (state = initial, { type, payload }) => {
         ...state,
         verification: payload,
       };
-    case NEXT:
-      return {
-        ...state,
-        packages: packages.packages.filter(
-          (package_) => package_.id !== payload
-        ),
-      };
+
     default:
       return state;
   }

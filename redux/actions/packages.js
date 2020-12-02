@@ -43,10 +43,3 @@ export const updateStatus = (package_id, status_id) => async () => {
     status: status_id,
   });
 };
-
-export const nextPackage = (package_id) => (dispatch) => {
-  dispatch({
-    type: NEXT,
-    payload: package_id,
-  });
-};

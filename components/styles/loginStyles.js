@@ -1,0 +1,67 @@
+import { StyleSheet } from "react-native";
+export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "rgba(255,255,255,1)",
+  },
+  image: {
+    top: 0,
+    left: 0,
+    width: 528,
+    height: 882,
+    position: "absolute",
+  },
+  image_imageStyle: {
+    opacity: 0.21,
+  },
+  placeholder1: {
+    borderBottomWidth: 2,
+    borderBottomColor: "rgba(173,185,225,1)",
+    fontFamily: "roboto-regular",
+    color: "#121212",
+    height: 42,
+    width: 257,
+    marginTop: 415,
+    marginLeft: 156,
+  },
+  placeholder: {
+    borderBottomWidth: 2,
+    borderBottomColor: "rgba(173,185,225,1)",
+    top: 344,
+    left: 156,
+    position: "absolute",
+    fontFamily: "roboto-regular",
+    color: "#121212",
+    height: 42,
+    width: 257,
+  },
+  button: {
+    top: 561,
+    left: 156,
+    width: 257,
+    height: 50,
+    position: "absolute",
+  },
+  loremIpsum: {
+    top: 203,
+    left: 162,
+    position: "absolute",
+    fontFamily: "roboto-regular",
+    color: "#121212",
+    fontSize: 16,
+  },
+  pinpoint: {
+    top: 154,
+    left: 221,
+    position: "absolute",
+    fontFamily: "Aldrich-Regular",
+    color: "#121212",
+    fontSize: 30,
+  },
+  imageStack: {
+    width: 528,
+    height: 882,
+    marginTop: -15,
+    marginLeft: -97,
+  },
+});

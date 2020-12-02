@@ -1,7 +1,7 @@
 export const PROFILE = "Profile";
 export const ROUTE = "Route";
 export const HOME = "Home";
-
+export const BOTTOMTAB = "BottomTab";
 export const USER = "User";
 export const LOGIN = "Login";
 

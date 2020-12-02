@@ -17,14 +17,21 @@ const mapStateToProps = ({ user }) => ({
 export default connect(mapStateToProps)(function UserStack({ user }) {
   return (
     <Navigator initialRouteName={user ? PROFILE : HOME}>
-      {user ? (
-        <Screen name={PROFILE} component={Profile} />
-      ) : (
+      {/* {user ? ( */}
+      <Screen
+        options={{ headerShown: false }}
+        name={PROFILE}
+        component={Profile}
+      />
+      {/* ) : (
         <>
-          <Screen name={HOME} component={Home} />
-          <Screen name={LOGIN} component={Login} />
+          <Screen
+            options={{ headerShown: false }}
+            name={LOGIN}
+            component={Login}
+          />
         </>
-      )}
+      )} */}
     </Navigator>
   );
 });

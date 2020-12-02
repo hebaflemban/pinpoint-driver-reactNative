@@ -1,18 +1,25 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createStackNavigator } from "@react-navigation/stack";
 
 // Screens
-import { USER, ROUTE } from "./screens";
-import UserStack from "./UserStack";
-import RouteStack from "./RouteStack";
+import { HOME, BOTTOMTAB, LOGIN } from "./screens";
+import Home from "../components/Home";
+import PinpointStack from "./PinpointStack";
+import Login from "../components/Login";
 
-const { Navigator, Screen } = createBottomTabNavigator();
+const { Navigator, Screen } = createStackNavigator();
 
 export default function RootTabNavigator() {
   return (
-    <Navigator initialRouteName={USER}>
-      <Screen name={USER} component={UserStack} />
-      <Screen name={ROUTE} component={RouteStack} />
+    <Navigator initialRouteName={HOME}>
+      <Screen options={{ headerShown: false }} name={HOME} component={Home} />
+      <Screen options={{ headerShown: false }} name={LOGIN} component={Login} />
+      <Screen
+        options={{ headerShown: false }}
+        name={BOTTOMTAB}
+        component={PinpointStack}
+      />
     </Navigator>
   );
 }

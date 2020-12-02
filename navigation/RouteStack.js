@@ -19,12 +19,28 @@ const { Navigator, Screen } = createStackNavigator();
 
 export default function RouteStack() {
   return (
-    <Navigator initialRouteName={GEOLOCATION}>
+    <Navigator initialRouteName={OTPVERIFICATION}>
       <Screen name={GEOLOCATION} component={Geolocation} />
-      <Screen name={PACKAGEINFO} component={PackageInfo} />
-      <Screen name={DELIVERED} component={Delivered} />
-      <Screen name={FAILD} component={Failed} />
-      <Screen name={OTPVERIFICATION} component={OTPVerification} />
+      <Screen
+        options={{ headerShown: false }}
+        name={PACKAGEINFO}
+        component={PackageInfo}
+      />
+      <Screen
+        options={{ headerShown: false }}
+        name={DELIVERED}
+        component={Delivered}
+      />
+      <Screen
+        options={{ headerShown: false }}
+        name={FAILD}
+        component={Failed}
+      />
+      <Screen
+        options={{ headerShown: false }}
+        name={OTPVERIFICATION}
+        component={OTPVerification}
+      />
     </Navigator>
   );
 }

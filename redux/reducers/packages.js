@@ -1,12 +1,32 @@
-import { SET_PACKAGES, NEXT } from "../actions/types";
+import { SET_PACKAGES, NEXT, VERIFY } from "../actions/types";
+const initial = {
+  packages: null,
+  total: 0,
+  verification: "",
+};
 
-export default (packages = null, { type, payload }) => {
+export default (state = initial, { type, payload }) => {
   switch (type) {
     case SET_PACKAGES:
-      return payload;
+      console.log("from reducers", payload);
+      return {
+        packages: payload,
+        total: payload.length,
+        verification: "",
+      };
+    case VERIFY:
+      return {
+        ...state,
+        verification: payload,
+      };
     case NEXT:
-      return packages.filter((package_) => package_.id !== payload);
+      return {
+        ...state,
+        packages: packages.packages.filter(
+          (package_) => package_.id !== payload
+        ),
+      };
     default:
-      return packages;
+      return state;
   }
 };

@@ -1,5 +1,5 @@
 import instance from "./instance";
-import { SET_PACKAGES, NEXT } from "./types";
+import { SET_PACKAGES, NEXT, VERIFY } from "./types";
 
 export const setPackages = () => async (dispatch) => {
   try {
@@ -12,6 +12,28 @@ export const setPackages = () => async (dispatch) => {
     });
   } catch (error) {
     console.error("Error while fetching packages", error);
+  }
+};
+
+export const otpVerify = (id, code) => async (dispatch) => {
+  try {
+    const responce = await instance.post("shipments/verify/", { code, id });
+
+    const message = responce.data;
+    dispatch({
+      type: VERIFY,
+      payload: message,
+    });
+  } catch (error) {
+    console.error("Error verifying", error);
+  }
+};
+
+export const resendOtp = (id) => async () => {
+  try {
+    await instance.get("shipments/resend/", { id: id });
+  } catch (error) {
+    console.error("Error resending otp code", error);
   }
 };
 

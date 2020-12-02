@@ -3,16 +3,17 @@ import decode from "jwt-decode";
 
 import { SET_CURRENT_USER } from "./types";
 import { instance } from "./instance";
-import { PROFILE } from "../../navigation/screens";
+import { BOTTOMTAB, PROFILE } from "../../navigation/screens";
 import { setPackages } from "./packages";
 
 export const login = (userData, navigation) => async (dispatch) => {
+  console.log(userData);
   try {
     const res = await instance.post(`login/`, userData);
 
     const { access } = res.data;
     dispatch(setCurrentUser(access));
-    navigation.navigate(PROFILE);
+    navigation.navigate(BOTTOMTAB, { screen: PROFILE });
   } catch (error) {
     console.error("Error while logging in", error.responce);
   }

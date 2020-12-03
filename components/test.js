@@ -180,7 +180,7 @@ container: {
     top: 138,
     left: 120,
     position: "absolute",
-    fontFamily: "Aldrich-Regular",
+    fontFamily: "aldrich-regular",
     color: "#121212",
     fontSize: 30
   },

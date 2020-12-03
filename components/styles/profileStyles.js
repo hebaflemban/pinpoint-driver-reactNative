@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
   },
   icon3: {
-    color: "rgba(128,128,128,1)",
+    color: "rgba(243,251,210,1)",
     fontSize: 40,
     height: 44,
     width: 32,
@@ -239,7 +239,7 @@ export const styles = StyleSheet.create({
     color: "rgba(255,255,255,1)",
     fontSize: 20,
     marginTop: 8,
-    marginLeft: 111,
+    marginLeft: 106,
   },
   rect20: {
     width: 285,
@@ -312,8 +312,8 @@ export const styles = StyleSheet.create({
     fontFamily: "average-sans-regular",
     color: "rgba(255,255,255,1)",
     fontSize: 40,
-    marginTop: 9,
-    marginLeft: 26,
+    marginTop: 10,
+    marginLeft: 18,
   },
   hours1: {
     fontFamily: "average-sans-regular",
@@ -342,13 +342,13 @@ export const styles = StyleSheet.create({
     color: "rgba(255,255,255,1)",
     fontSize: 40,
     marginTop: 13,
-    marginLeft: 27,
+    marginLeft: 19,
   },
   miles1: {
     fontFamily: "average-sans-regular",
     color: "rgba(255,255,255,1)",
     fontSize: 20,
-    marginLeft: 17,
+    marginLeft: 27,
   },
   rect14: {
     width: 78,
@@ -415,7 +415,7 @@ export const styles = StyleSheet.create({
     color: "rgba(255,255,255,1)",
     fontSize: 40,
     marginTop: 13,
-    marginLeft: 26,
+    marginLeft: 9,
   },
   hours2: {
     fontFamily: "average-sans-regular",
@@ -443,13 +443,13 @@ export const styles = StyleSheet.create({
     color: "rgba(255,255,255,1)",
     fontSize: 40,
     marginTop: 13,
-    marginLeft: 26,
+    marginLeft: 9,
   },
   miles2: {
     fontFamily: "average-sans-regular",
     color: "rgba(255,255,255,1)",
     fontSize: 20,
-    marginLeft: 17,
+    marginLeft: 25,
   },
   rect17: {
     width: 78,
@@ -471,7 +471,7 @@ export const styles = StyleSheet.create({
     color: "rgba(255,255,255,1)",
     fontSize: 40,
     marginTop: 13,
-    marginLeft: 28,
+    marginLeft: 20,
   },
   packages2: {
     fontFamily: "average-sans-regular",

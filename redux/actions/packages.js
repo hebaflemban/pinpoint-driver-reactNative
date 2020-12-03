@@ -31,7 +31,7 @@ export const otpVerify = (id, code) => async (dispatch) => {
 
 export const resendOtp = (id) => async () => {
   try {
-    await instance.get("shipments/resend/", { id: id });
+    await instance.put("shipments/resend/", { id: id });
   } catch (error) {
     console.error("Error resending otp code", error);
   }

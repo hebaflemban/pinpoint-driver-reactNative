@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { styles } from "./styles/otpStyles";
 import {
   View,
@@ -26,20 +26,18 @@ import {
 import Failed from "./Failed";
 import Delivered from "./Delivered";
 const CELL_COUNT = 4;
+import instance from "../redux/actions/instance";
 
 function OTPVerification({
   route,
   navigation,
   updateStatus,
-  otpVerify,
   resendOtp,
   setPackages,
-  msg,
 }) {
   const { package_id } = route.params;
   const [modalVisible, setModalVisible] = useState(false);
   const [deliveredVisible, setDeliveredVisible] = useState(false);
-
   const [value, setValue] = useState("");
   const ref = useBlurOnFulfill({ value, cellCount: CELL_COUNT });
   const [props, getCellOnLayoutHandler] = useClearByFocusCell({
@@ -48,15 +46,24 @@ function OTPVerification({
   });
 
   const verify = async () => {
-    await otpVerify(package_id, value);
-    if (msg === "Success") {
-      setDeliveredVisible(true);
-      updateStatus(package_id, 5);
-      setPackages();
-    } else {
-      setModalVisible(true);
+    try {
+      const responce = await instance.post("shipments/verify/", {
+        code: value,
+        id: package_id,
+      });
+
+      if (responce.data.msg === "Success") {
+        setDeliveredVisible(true);
+        updateStatus(package_id, 5);
+        setPackages();
+      } else {
+        setModalVisible(true);
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
+
   return (
     <KeyboardAwareScrollView
       style={{ backgroundColor: "white" }}

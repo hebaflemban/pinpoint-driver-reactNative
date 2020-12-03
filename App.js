@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Container } from "native-base";
+import { Spinner, Container } from "native-base";
 import { NavigationContainer } from "@react-navigation/native";
 import * as eva from "@eva-design/eva";
 import { EvaIconsPack } from "@ui-kitten/eva-icons";
@@ -13,6 +13,8 @@ import RootNavigator from "./navigation";
 import store from "./redux";
 import HOME from "./navigation/screens";
 import * as Font from "expo-font";
+import { useFonts } from "expo-font";
+import { Ionicons } from "@expo/vector-icons";
 
 const pubnub = new PubNub({
   publishKey: "pub-c-bc6df04b-ff73-421b-959b-99d804b1acf0",
@@ -20,14 +22,15 @@ const pubnub = new PubNub({
 });
 
 export default function App() {
-  useEffect(async () => {
-    await Font.loadAsync({
-      "roboto-regular": require("./assets/fonts/Roboto-Regular.ttf"),
-      "Aldrich-Regular": require("./assets/fonts/Aldrich-Regular.ttf"),
-      "roboto-700": require("./assets/fonts/roboto-700.ttf"),
-      "average-sans-regular": require("./assets/fonts/average-sans-regular.ttf"),
-    });
-  }, []);
+  const [loaded] = useFonts({
+    "roboto-regular": require("./assets/fonts/Roboto-Regular.ttf"),
+    "Aldrich-Regular": require("./assets/fonts/Aldrich-Regular.ttf"),
+    "roboto-700": require("./assets/fonts/roboto-700.ttf"),
+    "average-sans-regular": require("./assets/fonts/average-sans-regular.ttf"),
+    ...Ionicons.font,
+  });
+
+  if (!loaded) return <Spinner color="#132D4B" />;
   return (
     <PubNubProvider client={pubnub}>
       <Provider store={store}>

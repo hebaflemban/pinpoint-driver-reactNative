@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
     opacity: 0.7,
   },
   image: {
-    top: 0,
+    top: -22,
     left: 0,
     width: 412,
     height: 233,
@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
     borderRadius: 91,
   },
   image2: {
-    top: 149,
+    top: 127,
     left: 166,
     width: 229,
     height: 226,
@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
     height: 375,
   },
   rect: {
-    top: 232,
+    top: 210,
     width: 375,
     height: 595,
     position: "absolute",
@@ -85,6 +85,7 @@ export const styles = StyleSheet.create({
     fontSize: 18,
     marginLeft: 18,
     width: 200,
+    marginTop: 3,
   },
   icon2Row: {
     height: 25,
@@ -107,6 +108,7 @@ export const styles = StyleSheet.create({
     marginLeft: 18,
     width: 250,
     height: 50,
+    marginTop: 3,
   },
   icon3Row: {
     height: 25,
@@ -177,7 +179,7 @@ export const styles = StyleSheet.create({
   button3Row: {
     height: 49,
     flexDirection: "row",
-    marginTop: 65,
+    marginTop: 87,
     marginLeft: 33,
     marginRight: 40,
   },

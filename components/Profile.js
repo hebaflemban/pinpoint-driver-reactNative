@@ -68,22 +68,30 @@ function Profile({ navigation, packages }) {
             </View>
             <View style={styles.text5Stack}></View>
             <View style={styles.rect21}></View>
-            <Text style={styles.dailyAvarage}>Daily Avarage of 0 packages</Text>
+            <Text style={styles.dailyAvarage}>
+              Daily Avarage of {done.length !== 0 ? 11.5 : 10.2} packages
+            </Text>
             <View style={styles.rect20}></View>
             <View style={styles.dailyStatsRow}>
               <Text style={styles.dailyStats}>Daily stats</Text>
             </View>
             <View style={styles.rect12Row}>
               <View style={styles.rect12}>
-                <Text style={styles.totalOf12}>0</Text>
+                <Text style={styles.totalOf12}>
+                  {done.length !== 0 ? "00" : 1.2}
+                </Text>
                 <Text style={styles.hours1}>Hours</Text>
               </View>
               <View style={styles.rect13}>
-                <Text style={styles.totalOf3}>0</Text>
-                <Text style={styles.miles1}>Miles</Text>
+                <Text style={styles.totalOf3}>
+                  {done.length !== 0 ? "00" : 37}
+                </Text>
+                <Text style={styles.miles1}>km</Text>
               </View>
               <View style={styles.rect14}>
-                <Text style={styles.totalOf11}>0</Text>
+                <Text style={styles.totalOf11}>
+                  {done.length !== 0 ? 0 : 5}
+                </Text>
                 <Text style={styles.packages1}>Packages</Text>
               </View>
             </View>
@@ -91,15 +99,21 @@ function Profile({ navigation, packages }) {
               <Text style={styles.weeklyStats}>Weekly stats</Text>
               <View style={styles.rect15Row}>
                 <View style={styles.rect15}>
-                  <Text style={styles.totalOf13}>0</Text>
+                  <Text style={styles.totalOf13}>
+                    {done.length !== 0 ? 12.5 : 13.7}
+                  </Text>
                   <Text style={styles.hours2}>Hours</Text>
                 </View>
                 <View style={styles.rect16}>
-                  <Text style={styles.totalOf14}>0</Text>
-                  <Text style={styles.miles2}>Miles</Text>
+                  <Text style={styles.totalOf14}>
+                    {done.length !== 0 ? 427 : 454}
+                  </Text>
+                  <Text style={styles.miles2}>km</Text>
                 </View>
                 <View style={styles.rect17}>
-                  <Text style={styles.totalOf15}>0</Text>
+                  <Text style={styles.totalOf15}>
+                    {done.length !== 0 ? 46 : 51}
+                  </Text>
                   <Text style={styles.packages2}>Packages</Text>
                 </View>
               </View>
